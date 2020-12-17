@@ -4,7 +4,7 @@ export (NodePath) var flight_pointer_path
 
 onready var flight_pointer: FlightPointer = get_node(flight_pointer_path)
 
-var thrust = 200
+var thrust = 1000
 var pitch = 0
 var yaw = 0
 var roll = 0

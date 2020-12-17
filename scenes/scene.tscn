@@ -36,6 +36,8 @@ shadow_enabled = true
 [node name="Aircraft" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 mass = 1.0
+linear_damp = 1.0
+angular_damp = 1.0
 flight_pointer_path = NodePath("../FlightPointer")
 
 [node name="FlightCamera" parent="." instance=ExtResource( 3 )]
