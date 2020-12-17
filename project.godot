@@ -8,9 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "FlightCamera",
+"language": "GDScript",
+"path": "res://source/camera.gd"
+}, {
+"base": "Spatial",
+"class": "FlightPointer",
+"language": "GDScript",
+"path": "res://source/flight_pointer.gd"
+}, {
+"base": "Reference",
+"class": "PID",
+"language": "GDScript",
+"path": "res://source/pid.gd"
+} ]
 _global_script_class_icons={
-
+"FlightCamera": "",
+"FlightPointer": "",
+"PID": ""
 }
 
 [application]
@@ -18,6 +35,10 @@ _global_script_class_icons={
 config/name="godot-aircraft"
 run/main_scene="res://scenes/scene.tscn"
 config/icon="res://icon.png"
+
+[physics]
+
+3d/default_gravity=0.0
 
 [rendering]
 
