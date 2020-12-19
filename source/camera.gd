@@ -1,13 +1,13 @@
 extends Spatial
 class_name FlightCamera
 
-export (NodePath) var flight_pointer_path
 export (NodePath) var aircraft_path
+export (NodePath) var flight_pointer_path
 
 var weight = 2
 
-onready var flight_pointer: FlightPointer = get_node(flight_pointer_path)
 onready var aircraft: Spatial = get_node(aircraft_path)
+onready var flight_pointer: FlightPointer = get_node(flight_pointer_path)
 
 
 func _process(delta: float) -> void:

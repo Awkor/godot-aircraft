@@ -42,8 +42,8 @@ flight_pointer_path = NodePath("../FlightPointer")
 
 [node name="FlightCamera" parent="." instance=ExtResource( 3 )]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 0, 0 )
-flight_pointer_path = NodePath("../FlightPointer")
 aircraft_path = NodePath("../Aircraft")
+flight_pointer_path = NodePath("../FlightPointer")
 
 [node name="FlightPointer" type="Spatial" parent="."]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 0, 0 )
