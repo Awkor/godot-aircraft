@@ -4,7 +4,7 @@ class_name FlightCamera
 export (NodePath) var flight_pointer_path
 export (NodePath) var aircraft_path
 
-var weight = 8
+var weight = 2
 
 onready var flight_pointer: FlightPointer = get_node(flight_pointer_path)
 onready var aircraft: Spatial = get_node(aircraft_path)
