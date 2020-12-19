@@ -4,7 +4,7 @@ export (NodePath) var flight_pointer_path
 
 onready var flight_pointer: FlightPointer = get_node(flight_pointer_path)
 
-var thrust = 1000
+var thrust = 2000
 var pitch = 0
 var yaw = 0
 var roll = 0
@@ -20,7 +20,7 @@ var roll_torque = 1.0
 
 func _process(delta: float) -> void:
 	var point = flight_pointer.get_point()
-	var angle = (-transform.basis.z).angle_to(point) * (2 * PI)
+	var angle = (-transform.basis.z).angle_to(point)
 
 	point = to_local(point)
 	point = point.normalized()
@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 	yaw = yaw_pid.update(-point.x, delta)
 	yaw = clamp(yaw, -1, 1) * yaw_torque
 
-	var influence = inverse_lerp(0, 5, angle)
+	var influence = inverse_lerp(0, 1, angle)
 	var roll_error = lerp(-transform.basis.x.y, point.x, influence)
 
 	roll = roll_pid.update(roll_error, delta)
