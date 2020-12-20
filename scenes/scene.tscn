@@ -13,6 +13,12 @@ extents = Vector3( 256, 1, 256 )
 [sub_resource type="CubeMesh" id=2]
 size = Vector3( 512, 2, 512 )
 
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 16, 64, 16 )
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 32, 128, 32 )
+
 [node name="Spatial" type="Spatial"]
 __meta__ = {
 "_edit_group_": true,
@@ -34,7 +40,7 @@ transform = Transform( 0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0
 shadow_enabled = true
 
 [node name="Aircraft" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -128 )
 mass = 1.0
 linear_damp = 1.0
 angular_damp = 1.0
@@ -56,3 +62,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 flight_pointer_path = NodePath("../FlightPointer")
+
+[node name="Tower" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 64, 0 )
+
+[node name="TowerShape" type="CollisionShape" parent="Tower"]
+shape = SubResource( 3 )
+
+[node name="TowerMesh" type="MeshInstance" parent="Tower"]
+mesh = SubResource( 4 )
+material/0 = ExtResource( 1 )
