@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/textures/floor.tres" type="Material" id=1]
 [ext_resource path="res://scenes/aircraft.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/camera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://source/flight_pointer.gd" type="Script" id=4]
-[ext_resource path="res://assets/textures/crosshair.png" type="Texture" id=5]
-[ext_resource path="res://source/crosshair.gd" type="Script" id=6]
+[ext_resource path="res://assets/textures/flight_pointer_crosshair.png" type="Texture" id=5]
+[ext_resource path="res://source/flight_pointer_crosshair.gd" type="Script" id=6]
+[ext_resource path="res://source/aircraft_crosshair.gd" type="Script" id=7]
+[ext_resource path="res://assets/textures/aircraft_crosshair.png" type="Texture" id=8]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 256, 1, 256 )
@@ -55,13 +57,21 @@ flight_pointer_path = NodePath("../FlightPointer")
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 0, 0 )
 script = ExtResource( 4 )
 
-[node name="Crosshair" type="TextureRect" parent="."]
+[node name="FlightPointerCrosshair" type="TextureRect" parent="."]
 texture = ExtResource( 5 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 flight_pointer_path = NodePath("../FlightPointer")
+
+[node name="AircraftCrosshair" type="TextureRect" parent="."]
+texture = ExtResource( 8 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+aircraft_path = NodePath("../Aircraft")
 
 [node name="Tower" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 64, 0 )
