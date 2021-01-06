@@ -1,3 +1,3 @@
 # godot-aircraft
 
-The textures and models are from [Kenney](https://kenney.nl/)
+The models and textures are from [Kenney](https://kenney.nl/).
